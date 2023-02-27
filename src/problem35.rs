@@ -50,7 +50,7 @@ fn turn_number(mut number : usize) -> usize{
     return number;
 }
 
-pub fn circular_primes() -> usize{
+pub fn circular_primes(){
     let mut counter: usize = 0;
 
     for i in 2..1000000{
@@ -67,5 +67,5 @@ pub fn circular_primes() -> usize{
             counter += 1;
         }
     }
-    return counter;
+    println!("There are {counter} circular primes numbers below on milion");
 }

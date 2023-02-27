@@ -9,7 +9,7 @@ fn sqrt(nb : u64) -> u64{
     return 0;
 }
 
-pub fn largest_prime_factor() -> i32{
+pub fn largest_prime_factor(){
     let pb : u64 = 600851475143;
     let mut factor = 2;
     let mut nb = 0;
@@ -27,5 +27,6 @@ pub fn largest_prime_factor() -> i32{
         factor += 1;
     }
     nb /= tmp;
-    nb as i32
+    println!("The largest prime factor of 600851475143 is {nb}");
+    return ;
 }
