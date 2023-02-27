@@ -1,4 +1,4 @@
-pub fn even_fibonacci_numbers() -> i32{
+pub fn even_fibonacci_numbers(){
     let mut sum = 0;
     let mut before = 0;
     let mut current = 1;
@@ -11,5 +11,6 @@ pub fn even_fibonacci_numbers() -> i32{
             sum += current;
         }
     }
-    return sum;
+    println!("The sum of the even number in the Fibonacci sequence is {sum}.");
+    return ;
 }

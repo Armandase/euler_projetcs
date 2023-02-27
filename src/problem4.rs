@@ -43,7 +43,7 @@ fn is_palindrome(nb : i32) -> bool{
     false
 }
 
-pub fn largest_palindrome_product() -> i32{
+pub fn largest_palindrome_product(){
     let max : i32 = 1000;
     let mut number : i32 = 0;
 
@@ -54,5 +54,5 @@ pub fn largest_palindrome_product() -> i32{
             }
         }
     }
-    return number;
+    println!("The largest palindrome made from the product of two 3-digit numbers is {number}");
 }

@@ -8,11 +8,12 @@ fn check_divider(nu : u64) -> bool {
 }
 
 
-pub fn smallest_multiple() -> i32{
+pub fn smallest_multiple(){
     for i in (20..u64::MAX).step_by(20){
         if check_divider(i){
-            return i as i32;
+            println!("The smallest positive number that can be devided by each of the number from 1 to 20 is {i}");
+            return ;
         }
     }
-    return -1;
+    println!("The smallest positive number that can be devided by each of the number from 1 to 20 is no found");
 }
