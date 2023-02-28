@@ -4,6 +4,7 @@ pub mod problem2;
 pub mod problem3;
 pub mod problem4;
 pub mod problem5;
+pub mod problem6;
 pub mod problem35;
 pub mod problem131;
 
@@ -23,6 +24,9 @@ fn get_problem(s : &String){
     if s.trim() == "5"{
         problem5::smallest_multiple();
     }
+    if s.trim() == "6"{
+        problem6::sum_square_difference();
+    }
     if s.trim() == "35"{
         problem35::circular_primes();
     }
@@ -32,7 +36,7 @@ fn main() {
     let mut s = String::new();
 
     println!("You can select the problem nº");
-    println!("\t1, 2, 3, 4, 5, 35");
+    println!("\t1, 2, 3, 4, 5, 6, 35");
     loop {
         stdin().read_line(&mut s).expect("Error in standard in put");
         if s.trim() == ""{
