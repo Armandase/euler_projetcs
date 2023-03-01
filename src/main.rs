@@ -6,6 +6,7 @@ pub mod problem4;
 pub mod problem5;
 pub mod problem6;
 pub mod problem7;
+pub mod problem8;
 pub mod problem35;
 pub mod problem131;
 
@@ -30,6 +31,9 @@ fn get_problem(s : &String){
     }
     if s.trim() == "7"{
         problem7::the_10001st_prime_number();
+    }
+    if s.trim() == "8"{
+        problem8::largest_product_in_a_series();
     }
     if s.trim() == "35"{
         problem35::circular_primes();
