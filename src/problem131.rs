@@ -18,7 +18,10 @@ fn sqrt(number : u64) -> u64{
 fn is_prim (number: u64) -> bool{
     let max = sqrt(number + 1);
 
-    for i in 2..max{
+    if number % 2 == 0{
+        return false;
+    }
+    for i in (3..max).step_by(2){
         if number % i == 0{
             return false;
         }
@@ -42,8 +45,13 @@ fn pow (nb : u64, power : u64) -> u64{
 
 fn is_cube_from_nu(nu : u64) -> bool{
     let mut i = 0;
-    while pow(i, 3) < nu + 1{
-        if pow(i, 3) == nu{
+    let mut pow_i;
+
+    pow_i = pow(i, 3);
+    while pow_i < nu + 1{
+        pow_i = pow(i, 3);
+        if pow_i == nu{
+            print!("ciruclar : {} from ->", i);
             return true;
         }
         i += 1;
@@ -51,31 +59,37 @@ fn is_cube_from_nu(nu : u64) -> bool{
     return false
 }
 
-fn search_partnership(nb : u64) -> bool{
-    let mut i = 1;
-    let mut index = pow(i, 3);
+fn search_partnership(nb : u64, before : u64) -> u64{
+    let mut index = before;
+    let max = nb * 8;
 
-    while index < nb
+    while index < max
     {
         let tmp : u64 = pow(index, 3) + pow(index, 2) * nb;
         if is_cube_from_nu(tmp) == true{
-            return true
+         //   println!("tmp {tmp} = {} + {} * {nb} ({index})", pow(index, 3), pow(index, 2));
+            return index
         }
-        i += i;
-        index = pow(i, 3);
+        index += 1;
     }
-    return false
+    return 1
 }
 
-pub fn prime_cube_paternship() -> u64{
+pub fn prime_cube_paternship(){
     let max : u64 = 1000000;
     let mut counter : u64 = 0;
+    let mut before = 1;
+    let mut tmp = 0;
 
-    for i in 1..max{
-        if is_prim(i) == true && search_partnership(i) == true{
-            println!("nb : {i}");
-            counter += 1;
+    for i in (3..max).step_by(2){
+        if is_prim(i) == true {
+            tmp = search_partnership(i, before);
+            if tmp > 1{
+                before = tmp;
+                println!("nb : {i}");
+                counter += 1;
+            }
         }
     }
-    return counter;
+    println!("resultat : {counter}");
 }

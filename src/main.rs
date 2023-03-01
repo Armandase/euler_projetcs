@@ -38,13 +38,16 @@ fn get_problem(s : &String){
     if s.trim() == "35"{
         problem35::circular_primes();
     }
+    if s.trim() == "131"{
+        problem131::prime_cube_paternship();
+    }
 }
 
 fn main() {
     let mut s = String::new();
 
     println!("You can select the problem nº");
-    println!("\t1, 2, 3, 4, 5, 6, 7, 35");
+    println!("\t1, 2, 3, 4, 5, 6, 7, 8, 35, 131");
     loop {
         stdin().read_line(&mut s).expect("Error in standard in put");
         if s.trim() == ""{
