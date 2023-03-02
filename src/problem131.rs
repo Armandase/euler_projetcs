@@ -79,7 +79,7 @@ pub fn prime_cube_paternship(){
     let max : u64 = 1000000;
     let mut counter : u64 = 0;
     let mut before = 1;
-    let mut tmp = 0;
+    let mut tmp;
 
     for i in (3..max).step_by(2){
         if is_prim(i) == true {
