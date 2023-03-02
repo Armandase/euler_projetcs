@@ -12,39 +12,21 @@ pub mod problem35;
 pub mod problem131;
 
 fn get_problem(s : &String){
-    if s.trim() == "1"{
-        problem1::multiple_of_3_or_5();
-    }
-    if s.trim() == "2"{
-        problem2::even_fibonacci_numbers();
-    }
-    if s.trim() == "3"{
-        problem3::largest_prime_factor();
-    }
-    if s.trim() == "4"{
-        problem4::largest_palindrome_product();
-    } 
-    if s.trim() == "5"{
-        problem5::smallest_multiple();
-    }
-    if s.trim() == "6"{
-        problem6::sum_square_difference();
-    }
-    if s.trim() == "7"{
-        problem7::the_10001st_prime_number();
-    }
-    if s.trim() == "8"{
-        problem8::largest_product_in_a_series();
-    }
-    if s.trim() == "10"{
-        problem10::summation_of_primes();
-    }
-    if s.trim() == "35"{
-        problem35::circular_primes();
-    }
-    if s.trim() == "131"{
-        problem131::prime_cube_paternship();
-    }
+    type Pb = fn();
+    let nu : usize = s.trim().parse().unwrap();
+    let tab: [Pb; 12] = [problem1::multiple_of_3_or_5
+        , problem2::even_fibonacci_numbers
+        , problem3::largest_prime_factor
+        , problem4::largest_palindrome_product
+        , problem4::largest_palindrome_product
+        , problem5::smallest_multiple
+        , problem6::sum_square_difference
+        , problem7::the_10001st_prime_number
+        , problem8::largest_product_in_a_series
+        , problem10::summation_of_primes
+        , problem35::circular_primes
+        , problem131::prime_cube_paternship];
+    tab[nu]();
 }
 
 fn main() {
